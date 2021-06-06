@@ -18,12 +18,13 @@ headers = {
     }
 driver = webdriver.Firefox(executable_path='d:/geckodriver/geckodriver.exe')
 
-filename = 'larisa_ismi.id.csv'
+toko = input("masukkan toko:")
+filename = "hasil/"+str(toko)+'.csv'
 tempfile = NamedTemporaryFile(mode='w', delete=False,newline="")
 
 fields = ['shopid','itemid','catid','modelid','name','variation','price','stock','description','images']
 header = ['shopid','itemid','catid','modelid','name','variation name 0','variation 0','variation name 1','variation 1','price','stock','description','images']
-judul = "fix "+filename
+judul = "hasil/fix "+filename
 
 with open(filename, 'r') as csvfile, tempfile:
     reader = csv.DictReader(csvfile, fieldnames=fields)

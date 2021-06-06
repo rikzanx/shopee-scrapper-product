@@ -100,7 +100,7 @@ def get_products(shopId,page):
     return requests.get(url,headers=headers).json()
 
 def writeCSV(data,username):
-    judul = username+".csv"
+    judul = "hasil/"+username+".csv"
     with open(judul, "a",newline='') as csv_file:
         writer = csv.writer(csv_file, delimiter=';')
         for line in data:
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     #Create image folder if not exists
     if not path.exists('images'):
         os.makedirs('images')
-    judul = toko+".csv"
+    judul = "hasil/"+toko+".csv"
     with open(judul, "a",newline='') as csv_file:
         writer = csv.writer(csv_file)
         #write header
